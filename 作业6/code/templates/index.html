@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw4</title>
+    <script src="../static/jslib/jquery.min.js"></script>
+    <script src="../static/js/myJS.js"></script>
+    <!-- <script src="../static/js/other.js"></script> -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+    <!-- <script src="../static/js/heatmap.js"></script> -->
+
+    <!-- <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script> -->
+    
+    <link rel="stylesheet" href="../static/css/myCSS.css">
+    <link rel="icon" href="../static/100.png">
+</head>
+
+<body>
+    <div class="head">
+        <input type="file" id="uploadFile" />
+        <input type="button" id="displayFile" value="Upload" />
+        <button id="addRow" style="opacity: 0;">Add a Row</button>
+        <button id="saveFile" style="opacity: 0;">Save File</button>
+        <br />
+        <br />
+        <span id="selectText" style="opacity: 0;">select months</span> 
+        <select name="mons" id="mons" style="opacity: 0; ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <button id="gender" style="opacity: 0;">Gender Analysis</button>
+        <button id="area" style="opacity: 0;">Area Analysis</button>
+        <br />
+        <button id="price" style="opacity: 0;">Price Trend</button>
+        <button id="occ" style="opacity: 0;">Occupancy Trend</button>
+        <!-- <button id="age" style="opacity: 0;">Age Distribution</button> -->
+        <br />
+    </div>
+    <div id="display" style="position: absolute; width: 100%;left: 0%;">
+    </div>
+    <br /><br />
+
+</body>
+
+
+</html>

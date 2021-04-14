@@ -1,0 +1,31 @@
+tr.treven {
+    color: white;
+   background-color: lightpink;
+   height: max-content;
+   width: max-content;
+}
+
+tr.trodd {
+    color: white;
+    background-color: lightblue;
+    height: max-content;
+   width: max-content;
+}
+tr.title {
+    font-family: "Times New Roman", "Lucida Console", "Garamond", "Lucida Sans";
+    font-size:x-large;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #7a7a7a;
+    color: #fbffff;
+    width:auto;
+    height: 5ex;
+}
+
+tr{
+    text-align: center;
+}
+svg{
+    position:absolute;
+    top: 500px;
+}

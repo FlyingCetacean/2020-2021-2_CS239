@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel California</title>
+    <script src="../static/jslib/jquery.min.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!--    <script src="{{url_for('static',filename='js/jquery.js') }}"></script>-->
+    <!--    Due to flask error, the css file could not be correctly loaded,so I put the style here-->
+</head>
+<body>
+
+<div>
+    <input type="file" id="uploadFile"/>
+    <input type="button" id="hide" class="dv_bt_buttoncommit" value="Choose a File"
+           onclick="document.getElementById('uploadFile').click();"></input>
+    <input type="button" id="displayFile" class="dv_bt_buttoncommit" value="Upload"/>
+</div>
+<br/>
+<br/>
+
+<div style="text-align: center">
+    <button id="addRow" class="dv_bt_buttoncommit">Add a Row</button>
+    <button id="saveFile" class="dv_bt_buttoncommit">Save File</button>
+</div>
+
+
+<div id="dpCSV" style="width: 100%">
+    <!--display csv-->
+</div>
+</body>
+</html>

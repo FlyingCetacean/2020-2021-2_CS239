@@ -1,0 +1,49 @@
+tr.treven {
+    color: white;
+   background-color: lightpink;
+   height: max-content;
+   width: max-content;
+}
+
+tr.trodd {
+    color: white;
+    background-color: lightblue;
+    height: max-content;
+   width: max-content;
+}
+tr.title {
+    font-family: "Times New Roman", "Lucida Console", "Garamond", "Lucida Sans";
+    font-size:x-small;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #7a7a7a;
+    color: #fbffff;
+    width:auto;
+    height: 5ex;
+}
+
+tr{
+    text-align: center;
+}
+svg{
+    /* background-color: lightslategray; */
+    position:absolute;
+    top: 10%;
+    right: 5%;
+}
+
+
+.try{
+    /* opacity: 0; */
+    text-align: center;
+    /* width: 300px; */
+    /* height: 650px; */
+    /* border:7px dashed lightblue; */
+    position: absolute;
+    right: 1%;
+    color: lightpink;
+    top: 4%;
+}
+.head{
+    text-align: center;
+}
