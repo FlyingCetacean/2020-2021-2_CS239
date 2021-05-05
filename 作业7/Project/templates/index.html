@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel California</title>
+    <script src="../static/JSLib/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/JSLib/d3.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/pics/hotel.png">
+</head>
+
+
+<body>
+    <form id="form1" name="form1" method="post" action="">
+        <h1 style="text-align: center; height: 40px;font-style: italic;">
+            <img src="../static/pics/title.png" style="width:  2%;"> Hotel California
+        </h1>
+
+        <table id="tabProduct">
+            <tr>
+                <td class="hdStyle" style="width: 2vw" Name="Num"></td>
+                <td class="hdStyle" Name="female" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 1)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 1)">Female</td>
+                <td class="hdStyle" Name="local" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 2)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 2)">Local</td>
+                <td class="hdStyle" Name="usa" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 3)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 3)">USA</td>
+                <td class="hdStyle" Name="sa" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 4)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 4)">SA</td>
+                <td class="hdStyle" Name="eu" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 5)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 5)">EU</td>
+                <td class="hdStyle" Name="mea" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 6)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 6)">MEA</td>
+                <td class="hdStyle" Name="asia" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 7)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 7)">ASIA</td>
+                <td class="hdStyle" Name="businessmen" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 8)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 8)">Businessmen</td>
+                <td class="hdStyle" Name="tourists" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 9)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 9)">Tourists</td>
+                <td class="hdStyle" Name="dr" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 10)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 10)">DR</td>
+                <td class="hdStyle" Name="agency" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 11)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 11)">Agency</td>
+                <td class="hdStyle" Name="ac" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 12)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 12)">AC</td>
+                <td class="hdStyle" Name="u20" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 13)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 13)">U20</td>
+                <td class="hdStyle" Name="20to35" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 14)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 14)">20-35</td>
+                <td class="hdStyle" Name="35to55" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 15)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 15)">35-55</td>
+                <td class="hdStyle" Name="m55" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 16)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 16)">M55</td>
+                <td class="hdStyle" Name="price" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 17)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 17)">Price</td>
+                <td class="hdStyle" Name="los" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 18)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 18)">LoS</td>
+                <td class="hdStyle" Name="occupancy" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 19)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 19)">Occupancy</td>
+                <td class="hdStyle" Name="conventions" EditType="TextBox"
+                    onmousedown="get_column_index(document.getElementById('tabProduct'), 20)"
+                    onmouseup="recover_unit_color(document.getElementById('tabProduct'), 20)">Conventions</td>
+            </tr>
+
+            <tr id="emptyRow">
+                <td class="tdStyle" style="width: 5vw"><input type="checkbox" name="checkbox" value="checkbox" /></td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+                <td class="tdStyle">0</td>
+            </tr>
+        </table>
+
+        <br />
+        <div id="org_bt" style="text-align: center">
+            <input type="button" name="add" value="Add"
+                onclick="add_row(document.getElementById('tabProduct'), null)" />
+            <input type="button" name="delete" value="Delete"
+                onclick="delete_row(document.getElementById('tabProduct'))" />
+
+        </div>
+        <div style="text-align: center">
+            <input type="button" id="GA" name="GA" value="General Analysis"
+                onclick="show_ga_buttons(this); return false;" />
+        </div>
+        <div id="GA_buttons">
+            <input type="button" name="age" value="Age"
+                onclick="age_histogram(document.getElementById('tabProduct')); return false;" />
+            <input type="button" name="area" value="Area"
+                onclick="area_histogram(document.getElementById('tabProduct')); return false;" />
+            <input type="button" name="group" value="Group"
+                onclick="group_histogram(document.getElementById('tabProduct')); return false;" />
+            <input type="button" name="price" value="Price"
+                onclick=" price_histogram(document.getElementById('tabProduct')); return false;" />
+
+            <input type="button" name="gender" value="Gender"
+                onclick="gender_histogram(document.getElementById('tabProduct')); return false;" />
+
+            <input type="button" name="res" value="Reservation"
+                onclick="res_histogram(document.getElementById('tabProduct')); return false;" />
+
+            <input type="button" name="occ" value="Occupancy"
+                onclick=" occ_histogram(document.getElementById('tabProduct')); return false;" />
+
+            <input type="button" id="heat_bt" name="heat" value="Heatmap"
+                onclick="plot_heatmap(document.getElementById('tabProduct')); return false;" />
+        </div>
+
+    </form>
+
+    <p id="output" style="margin-bottom: 5%; background-color: rgb(233, 233, 211)">
+
+    </p>
+
+    <script rel="javascript" src="../static/js/TableUpdate.js"></script>
+    <script rel="javascript" src="../static/js/HistogramPlot.js"></script>
+    <script rel="javascript" src="../static/js/HeatmapPlot.js"></script>
+    <script rel="javascript" src="../static/js/PieChartPlot.js"></script>
+    <script rel="javascript" src="../static/js/Utils.js"></script>
+    <script rel="javascript" src="../static/js/general.js"></script>
+    <script rel="javascript">
+
+        let tabProduct = document.getElementById("tabProduct");
+        // update_hotel_info(tabProduct);
+        table_init(tabProduct);
+        // // 设置表格可编辑
+        EditTables(tabProduct);
+
+    </script>
+
+
+</body>
+
+</html>
