@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/main.css" type="text/css">
+    <script type="text/javascript" src="../static/jslib/jquery.min.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v5.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=2.0&ak=IeFfyL76AkRabDEPSlDIc8wzcPUUxDLf"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="../static/js/heatMap.js"></script>
+    <script src="../static/js/general.js"></script>
+    <script src="../static/js/histogram.js"></script>
+    
+    <script src="../static/js/post.js"></script>
+    <script>
+        $(document).ready(function () {
+            load("CN-Reanalysis-daily-2013010100.csv")
+            load("CN-Reanalysis-daily-2013010200.csv")
+            set_start_date(2013, 1, 1)
+            set_timing_type(true)
+        });
+    </script>
+</head>
+
+<body>
+    <button onclick="postSort()">test</button>
+    <div>
+        开始日期：<input type="text" id="startTime">
+    </div>
+    <div>
+        结束日期：<input type="text" id="endTime">
+    </div>
+    <select id="my_select">
+        <option value="-1" style="display: none;">选择需要显示的项目</option>
+        <option value="0"> PM2.5 </option>
+        <option value="1"> PM10 </option>
+        <option value="2"> SO2 </option>
+        <option value="3"> NO2 </option>
+        <option value="4"> CO </option>
+        <option value="5"> O3 </option>
+    </select>
+    <div id="main">
+    </div>
+    <div id="main2" style="height:600px;background-color: red;"></div>
+
+    <script>
+        $("#my_select").change(function () {
+            var index = parseInt($("#my_select").val());
+            if (index != -1) {
+                draw(index);
+            }
+            get_time()
+        });
+
+        $('#startTime').datepicker({
+            autoclose: true,
+            changeMonth: true,
+            changeYear: true,
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            dateFormat: "yy-m-d",
+        }).on('change', function () {
+            var startTime = parseTime(this.value);
+            set_start_date(startTime[0], startTime[1], startTime[2])
+            $('#endTime').datepicker('option', 'minDate', start_date);
+        });
+
+        $('#endTime').datepicker({
+            autoclose: true,
+            changeMonth: true,
+            changeYear: true,
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            dateFormat: "yy-m-d",
+        }).on('change', function () {
+            var endTime = parseTime(this.value);
+            set_end_date(endTime[0], endTime[1], endTime[2])
+            $('#startTime').datepicker('option', 'maxDate', end_date);
+        });
+    </script>
+</body>
+
+</html>
